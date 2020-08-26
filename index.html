@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+<!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+  <!-- <link rel="stylesheet" href="css/all.css"> -->
+<!-- CSS links -->
+<!-- Owl carousel CSS -->
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<!-- Owl carousel CSS -->
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/slick-theme.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/media.css">
+
+
+<title>Jquery Plugin</title>
+<body >
+
+<!-- Slick slider -->
+<section class="bg-banner">
+  <div class="container">
+  	<div class="row">
+  		<div class="col-12 mt-4">
+          <div class="autoplay">
+            <div><img src="image/2.jpg" class="img-fluid"></div>
+            <div><img src="image/2.jpg" class="img-fluid"></div>
+            <div><img src="image/2.jpg" class="img-fluid"></div>
+            <div><img src="image/2.jpg" class="img-fluid"></div>
+            <div><img src="image/2.jpg" class="img-fluid"></div>
+            <div><img src="image/2.jpg" class="img-fluid"></div>
+          </div>
+  		</div>
+  	</div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mt-4 mb-4">
+          <div class="lazy">
+            <div><img data-lazy="image/4.jpg" class="img-fluid"></div>
+            <div><img data-lazy="image/5.jpg" class="img-fluid"></div>
+            <div><img data-lazy="image/6.jpg" class="img-fluid"></div>
+            <div><img data-lazy="image/4.jpg" class="img-fluid"></div>
+            <div><img data-lazy="image/5.jpg" class="img-fluid"></div>
+            <div><img data-lazy="image/6.jpg" class="img-fluid"></div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- owl carousel -->
+<section class="pg2 ">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div id="owl-demo" class="owl-carousel owl-theme">
+ 
+        <div class="item"><img src="image/4.jpg"></div>
+        <div class="item"><img src="image/5.jpg"></div>
+        <div class="item"><img src="image/6.jpg"></div>
+        <div class="item"><img src="image/4.jpg"></div>
+        <div class="item"><img src="image/5.jpg"></div>
+        <div class="item"><img src="image/6.jpg"></div>
+        <div class="item"><img src="image/4.jpg"></div>
+ 
+      </div>
+        
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Isotope -->
+<section class="i-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mt-4 mb-4">
+        
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Isotope -->
+<div class="container">
+  <div class="portfolio-menu">
+    <ul>
+      <li class="active" data-filter="*">All</li>
+      <li data-filter=".sports">Sports</li>
+      <li data-filter=".nature">Nature</li>
+    </ul>
+  </div>
+
+  <div class="portfolio-item">
+    <div class="item sports"><img src="image/1.jpg" alt="" class="img-fluid"></div>
+    <div class="item nature"><img src="image/5.jpg" alt="" class="img-fluid"></div>
+    <div class="item sports"><img src="image/4.jpg" alt="" class="img-fluid"></div>
+    <div class="item nature"><img src="image/10.jpg" alt="" class="img-fluid"></div>
+    <div class="item sports"><img src="image/7.jpg" alt="" class="img-fluid"></div>
+    <div class="item nature"><img src="image/6.jpg" alt="" class="img-fluid"></div>
+  </div>
+</div>
+<!-- Isotope -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- jquery first, then Popper.js,then Bootstrap.JS -->
+<script src="js/jquery-3.5.1.min.js"></script>
+
+<!-- Isotope -->
+<script src="js/isotope.pkgd.min.js"></script>
+
+<!-- Owl carousel JS -->
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/slick.min.js"></script>
+
+
+<!-- <script src="js/popper.min.js"></script> -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+
+<script>
+$(document).ready(function(){
+
+  $('.autoplay').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    dots:true,
+    arrows:false,
+  });
+
+});
+</script>
+
+<script>
+$(document).ready(function(){
+
+
+$('.lazy').slick({
+  lazyLoad: 'ondemand',
+  slidesToShow: 3,
+  slidesToScroll: 1
+});
+
+});
+</script>
+
+
+<!-- Owl carousel Activation -->
+
+
+<script >
+$(document).ready(function() {
+ 
+  var owl = $('.owl-carousel');
+owl.owlCarousel({
+    items:4,
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout:1000,
+    autoplayHoverPause:true
+});
+$('.play').on('click',function(){
+    owl.trigger('play.owl.autoplay',[1000])
+})
+$('.stop').on('click',function(){
+    owl.trigger('stop.owl.autoplay')
+});
+ 
+});
+
+</script>
+
+
+<!-- Owl carousel Activation -->
+
+
+<!-- Isotope -->
+<script>
+$(document).ready(function(){
+
+  $(".portfolio-item").isotope({
+   itemSelector: ".item",
+   layoutMode: "fitRows"
+  });
+  $(".portfolio-menu ul li").click(function(){
+   $(".portfolio-menu ul li").removeClass("active");
+   $(this).addClass("active");
+   
+   var selector = $(this).attr("data-filter");
+   $(".portfolio-item").isotope({
+      filter: selector
+   });
+   return false;
+  });
+  
+});
+
+
+</script>
+<!-- Isotope -->
+
+</body>
+</html>
